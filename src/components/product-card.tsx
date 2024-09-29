@@ -1,5 +1,5 @@
 "use client";
-import { defaultImage } from "@/app/constant/default";
+import { brandLogo, defaultImage } from "@/app/constant/default";
 import { TProduct } from "@/app/types/printer";
 import { Contact } from "lucide-react";
 import Image from "next/image";
@@ -10,25 +10,40 @@ export const ProductCard = ({ data }: { data: TProduct }) => {
   return (
     // <Link href={`/${encodeURIComponent(data.description)}`}>
     <Card className="pt-4 text-xs max-sm:rounded-md md:text-sm">
-      <CardContent className="flex flex-col gap-y-4">
-        <Image
+      <CardContent className="flex flex-col gap-y-4 relative">
+        {/* <Image
           alt={data.description}
-          src={defaultImage}
-          height={300}
-          width={1280}
+          src={data.images && data.images.length > 0 ? data.images[0] : defaultImage}
+          height={500}
+          width={500}
           style={{ width: "100%" }}
           className="object-cover max-sm:object-contain"
+        /> */}
+        <Image
+          alt="Default Image"
+          src={brandLogo}
+          width={800}
+          height={800}
+          className="size-10 rounded-sm object-contain absolute "
         />
-        {/* <Image alt="Default Image" src={defaultImage} className="w-full rounded-sm" /> */}
+        <Image
+          alt={data.description}
+          src={data.images && data.images.length > 0 ? data.images[0] : defaultImage}
+          width={800}
+          height={800}
+          className="size-80 rounded-sm object-contain"
+        />
         <CardTitle>{data.partNumber}</CardTitle>
         <CardDescription className="line-clamp-2 text-xs md:text-sm">
           {data.description}
         </CardDescription>
-        <CardTitle className="text-blue-900 text-xl">{data.price}</CardTitle>
+        <CardTitle className="text-blue-900 text-xl">
+          Sar {((Number(data.price) + 25) * 1.15).toFixed(0)}
+        </CardTitle>
       </CardContent>
       <CardFooter>
         <Button
-          className="w-full gap-x-4 bg-blue-900 hover:bg-blue-500 shadow-inner"
+          className="w-full gap-x-4 bg-blue-900 hover:bg-blue-500 shadow-inner font-semibold"
           onClick={(event) => {
             event.preventDefault();
             event.stopPropagation();
@@ -36,7 +51,7 @@ export const ProductCard = ({ data }: { data: TProduct }) => {
           }}
         >
           <Contact className="size-5 hover:animate-ping" />
-          Contact Us
+          Contact Us Via Whatsaapp
         </Button>
       </CardFooter>
     </Card>
