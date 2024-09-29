@@ -9,8 +9,8 @@ import { Card, CardContent, CardDescription, CardFooter, CardTitle } from "./ui/
 export const ProductCard = ({ data }: { data: TProduct }) => {
   return (
     // <Link href={`/${encodeURIComponent(data.description)}`}>
-    <Card className="pt-4 text-xs max-sm:rounded-md md:text-sm">
-      <CardContent className="flex flex-col gap-y-4 relative">
+    <Card className="pt-4 text-xs max-sm:rounded-md md:text-sm ">
+      <CardContent className="flex flex-col gap-y-4 relative max-sm:p-3">
         {/* <Image
           alt={data.description}
           src={data.images && data.images.length > 0 ? data.images[0] : defaultImage}
@@ -37,11 +37,11 @@ export const ProductCard = ({ data }: { data: TProduct }) => {
         <CardDescription className="line-clamp-2 text-xs md:text-sm max-sm:h-8 h-10">
           {data.description}
         </CardDescription>
-        <CardTitle className="text-blue-900 text-xl">
-          Sar {((Number(data.price) + 25) * 1.15).toFixed(0)}
+        <CardTitle className="text-blue-900 text-xl max-sm:text-base">
+          SAR {((Number(data.price) + 25) * 1.15).toFixed(0)}
         </CardTitle>
       </CardContent>
-      <CardFooter>
+      <CardFooter className="max-sm:p-3">
         <Button
           className="w-full gap-x-4 bg-blue-900 hover:bg-blue-500 shadow-inner "
           onClick={(event) => {
