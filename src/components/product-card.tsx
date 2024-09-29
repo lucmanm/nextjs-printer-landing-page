@@ -43,7 +43,7 @@ export const ProductCard = ({ data }: { data: TProduct }) => {
       </CardContent>
       <CardFooter>
         <Button
-          className="w-full gap-x-4 bg-blue-900 hover:bg-blue-500 shadow-inner font-semibold"
+          className="w-full gap-x-4 bg-blue-900 hover:bg-blue-500 shadow-inner "
           onClick={(event) => {
             event.preventDefault();
             event.stopPropagation();
@@ -51,7 +51,7 @@ export const ProductCard = ({ data }: { data: TProduct }) => {
           }}
         >
           <Contact className="size-5 hover:animate-ping" />
-          <span className="max-sm:text-xs ">Contact Us</span>
+          <span className="max-sm:text-xs md:font-semibold">Contact Us</span>
         </Button>
       </CardFooter>
     </Card>
