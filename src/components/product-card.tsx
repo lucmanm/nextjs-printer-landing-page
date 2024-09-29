@@ -24,17 +24,17 @@ export const ProductCard = ({ data }: { data: TProduct }) => {
           src={brandLogo}
           width={800}
           height={800}
-          className="size-10 rounded-sm object-contain absolute "
+          className="absolute size-10 max-sm:size-7 rounded-sm object-contain "
         />
         <Image
           alt={data.description}
           src={data.images && data.images.length > 0 ? data.images[0] : defaultImage}
           width={800}
           height={800}
-          className="size-80 rounded-sm object-contain"
+          className="size-80 rounded-sm object-contain max-sm:h-36"
         />
         <CardTitle>{data.partNumber}</CardTitle>
-        <CardDescription className="line-clamp-2 text-xs md:text-sm">
+        <CardDescription className="line-clamp-2 text-xs md:text-sm h-8">
           {data.description}
         </CardDescription>
         <CardTitle className="text-blue-900 text-xl">
@@ -51,7 +51,7 @@ export const ProductCard = ({ data }: { data: TProduct }) => {
           }}
         >
           <Contact className="size-5 hover:animate-ping" />
-          Contact Us Via Whatsaapp
+          <span className="max-sm:text-xs ">Contact Us</span>
         </Button>
       </CardFooter>
     </Card>

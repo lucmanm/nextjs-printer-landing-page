@@ -8,7 +8,7 @@ const Products = () => {
   return (
     <div
       className={cn(
-        `grid max-sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:container mx-auto my-12`
+        `grid max-sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:container mx-auto my-12 max-sm:px-4`
       )}
     >
       {products.map((product, idx) => (
