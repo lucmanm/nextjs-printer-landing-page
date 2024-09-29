@@ -1,0 +1,1 @@
+export const defaultImage = "https://res.cloudinary.com/dzdcszrob/image/upload/v1721465707/playground-images/icons/q2dwvixku4oxmgjer5gd.svg"
