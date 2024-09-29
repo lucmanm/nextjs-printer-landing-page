@@ -34,7 +34,7 @@ export const ProductCard = ({ data }: { data: TProduct }) => {
           className="size-80 rounded-sm object-contain max-sm:h-36"
         />
         <CardTitle>{data.partNumber}</CardTitle>
-        <CardDescription className="line-clamp-2 text-xs md:text-sm h-8">
+        <CardDescription className="line-clamp-2 text-xs md:text-sm max-sm:h-8 h-10">
           {data.description}
         </CardDescription>
         <CardTitle className="text-blue-900 text-xl">
