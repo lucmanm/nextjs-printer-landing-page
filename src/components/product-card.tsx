@@ -1,12 +1,12 @@
 "use client";
 import { defaultImage } from "@/app/constant/default";
-import { TPrinter } from "@/app/types/printer";
+import { TProduct } from "@/app/types/printer";
 import { Contact } from "lucide-react";
 import Image from "next/image";
 import { Button } from "./ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardTitle } from "./ui/card";
 
-export const ProductCard = ({ data }: { data: TPrinter }) => {
+export const ProductCard = ({ data }: { data: TProduct }) => {
   return (
     // <Link href={`/${encodeURIComponent(data.description)}`}>
     <Card className="pt-4 text-xs max-sm:rounded-md md:text-sm">

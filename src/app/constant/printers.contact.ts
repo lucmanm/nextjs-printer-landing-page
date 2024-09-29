@@ -1,6 +1,6 @@
-import { TPrinter } from "../types/printer";
+import { TProduct } from "../types/printer";
 
-export const printerData: TPrinter[] = [
+export const products: TProduct[] = [
     {
         partNumber: "6U6G8ES",
         description: "HP Desktop Pro Tower 290 G9 Intel Core i7-12700 Processor, 8GB Ram, 256GB SDD M.2, Intel UHD Graphics 770, DVD-Writer, Wi-Fi Bluetooth, Wired keyboard & Mouse, Free Dos - Black ",

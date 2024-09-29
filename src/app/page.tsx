@@ -1,8 +1,8 @@
 import { ProductCard } from "@/components/product-card";
 import { cn } from "@/lib/utils";
-import { printerData } from "./constant/printers.contact";
 
 import React from "react";
+import { products } from "./constant/printers.contact";
 
 const Products = () => {
   return (
@@ -11,7 +11,7 @@ const Products = () => {
         `grid max-sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:container mx-auto my-12`
       )}
     >
-      {printerData.map((product, idx) => (
+      {products.map((product, idx) => (
         <ProductCard key={idx} data={product} />
       ))}
     </div>
