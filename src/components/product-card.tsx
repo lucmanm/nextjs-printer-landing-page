@@ -1,12 +1,20 @@
 "use client";
 import { brandLogo, defaultImage } from "@/app/constant/default";
 import { TProduct } from "@/app/types/printer";
-import { Contact } from "lucide-react";
 import Image from "next/image";
+import { WhatsApp } from "./icon/whatsapp";
 import { Button } from "./ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardTitle } from "./ui/card";
+import { MouseEvent} from "react";
+import { useRouter } from "next/navigation";
 
 export const ProductCard = ({ data }: { data: TProduct }) => {
+  const router = useRouter()
+  const onClick = (event: MouseEvent<HTMLButtonElement> ) =>{
+    event.preventDefault();
+    event.stopPropagation();
+    router.push("https://wa.me/0562617554")
+  }
   return (
     // <Link href={`/${encodeURIComponent(data.description)}`}>
     <Card className="pt-4 text-xs max-sm:rounded-md md:text-sm ">
@@ -43,14 +51,11 @@ export const ProductCard = ({ data }: { data: TProduct }) => {
       </CardContent>
       <CardFooter className="max-sm:p-3">
         <Button
-          className="w-full gap-x-4 bg-blue-900 hover:bg-blue-500 shadow-inner "
-          onClick={(event) => {
-            event.preventDefault();
-            event.stopPropagation();
-            alert("Working");
-          }}
+          className="w-full gap-x-4 bg-blue-900 hover:bg-green-500 shadow-inner "
+          onClick={onClick}
         >
-          <Contact className="size-5 hover:animate-ping" />
+          <WhatsApp color="#fff" width="24" className="text-white size-6 "/>
+          {/* <Image src="https://res.cloudinary.com/dzdcszrob/image/upload/v1727696453/social-media-icons/jxq88qboq7vjcpq8njtd.svg" sizes="48" width={48} height={48} alt="WhatsApp" className="size-5 text-cyan-400 fill-slate-300"/> */}
           <span className="max-sm:text-xs md:font-semibold">Contact Us</span>
         </Button>
       </CardFooter>
