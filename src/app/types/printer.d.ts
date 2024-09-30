@@ -3,4 +3,5 @@ export type TProduct ={
     description: string;
     price: string
     images: string[]
+    stock: string
 }

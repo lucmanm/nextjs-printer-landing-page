@@ -13,7 +13,7 @@ export const ProductCard = ({ data }: { data: TProduct }) => {
   const onClick = (event: MouseEvent<HTMLButtonElement> ) =>{
     event.preventDefault();
     event.stopPropagation();
-    router.push("https://wa.me/0562617554")
+    router.push("https://wa.me/966562617554")
   }
   return (
     // <Link href={`/${encodeURIComponent(data.description)}`}>
@@ -46,7 +46,12 @@ export const ProductCard = ({ data }: { data: TProduct }) => {
           {data.description}
         </CardDescription>
         <CardTitle className="text-blue-900 text-xl max-sm:text-base">
-          SAR {((Number(data.price) + 25) * 1.15).toFixed(0)}
+        {
+  Number(data.stock) === 0
+    ? "Not Available"
+    : `SAR ${(Number(data.price) + 25 * 1.15).toFixed(0)}`
+}
+
         </CardTitle>
       </CardContent>
       <CardFooter className="max-sm:p-3">
