@@ -2,11 +2,11 @@
 import { brandLogo, defaultImage } from "@/app/constant/default";
 import { TProduct } from "@/app/types/printer";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
+import { MouseEvent } from "react";
 import { WhatsApp } from "./icon/whatsapp";
 import { Button } from "./ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardTitle } from "./ui/card";
-import { MouseEvent} from "react";
-import { useRouter } from "next/navigation";
 
 export const ProductCard = ({ data }: { data: TProduct }) => {
   const router = useRouter()
@@ -18,7 +18,7 @@ export const ProductCard = ({ data }: { data: TProduct }) => {
   return (
     // <Link href={`/${encodeURIComponent(data.description)}`}>
     <Card className="pt-4 text-xs max-sm:rounded-md md:text-sm   shadow-sky-600/20 border-[.5px] border-sky-400">
-      <CardContent className="flex flex-col gap-y-4 relative max-sm:p-3">
+        <CardContent className="flex flex-col gap-y-4 relative max-sm:p-3">
         {/* <Image
           alt={data.description}
           src={data.images && data.images.length > 0 ? data.images[0] : defaultImage}
