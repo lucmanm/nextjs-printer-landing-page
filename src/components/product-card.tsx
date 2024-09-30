@@ -17,7 +17,7 @@ export const ProductCard = ({ data }: { data: TProduct }) => {
   }
   return (
     // <Link href={`/${encodeURIComponent(data.description)}`}>
-    <Card className="pt-4 text-xs max-sm:rounded-md md:text-sm ">
+    <Card className="pt-4 text-xs max-sm:rounded-md md:text-sm   shadow-sky-600/20 border-[.5px] border-sky-400">
       <CardContent className="flex flex-col gap-y-4 relative max-sm:p-3">
         {/* <Image
           alt={data.description}
